@@ -32,7 +32,7 @@ def owner_id() -> str:
     return str(st.secrets.get("OWNER_ID", "default-owner"))
 
 
-def require_login() -> None:
+#def require_login() -> None:
     expected = str(st.secrets.get("APP_PASSWORD", ""))
     if not expected:
         st.error("APP_PASSWORD is missing from Streamlit secrets.")
@@ -232,7 +232,7 @@ def profile_card(profile: Dict, index: int, total: int) -> None:
         st.rerun()
 
 
-require_login()
+# require_login()
 
 st.title("IG Following Review")
 st.caption("Review manually in Instagram. Progress is saved to Supabase after every action.")
